@@ -18,13 +18,15 @@ const menuTemplate = [
             {label: 'New Todo'},
             {
                 label: 'Quit',
-                click(){
-                    app.quit();
-                }
+                accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+            click() {
+                app.quit();
             }
-        ]
     }
-];
+]
+}
+]
+;
 
 if (process.platform === 'darwin') {
     menuTemplate.unshift({});
